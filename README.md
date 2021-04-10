@@ -1,6 +1,6 @@
-# When Being Unseen from mBERT is just the Beginning:Handling New Languages With Multilingual Language Models 
+# When Being Unseen from mBERT is just the Beginning: Handling New Languages With Multilingual Language Models 
 
-This repository includes pointers and scripts to reproduce experiments presented in [When Being Unseen from mBERT is just the Beginning:Handling New Languages With Multilingual Language Models](https://arxiv.org/abs/2010.12858)
+This repository includes pointers and scripts to reproduce experiments presented in [When Being Unseen from mBERT is just the Beginning: Handling New Languages With Multilingual Language Models](https://arxiv.org/abs/2010.12858)
 
 ##  Transliteration 
 
