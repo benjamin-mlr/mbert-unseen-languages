@@ -1,12 +1,18 @@
+# When Being Unseen from mBERT is just the Beginning:Handling New Languages With Multilingual Language Models 
 
+This repository includes pointers and scripts to reproduce experiments presented in [When Being Unseen from mBERT is just the Beginning:Handling New Languages With Multilingual Language Models](https://arxiv.org/abs/2010.12858)
 
-#  Fine Tuning BERT 
+##  Transliteration 
 
-This project includes all the code needed to train and use trained models for Dependancy Parsing, Part-of-Speech Tagging built in fine-tuning BERT.
+## Fine-tuning mBERT
+
+### mBERT Unsupervised Fine Tuning
+
+### mBERT Task Fine Tuning
  
-## Project Setting up 
+### Project Setting up 
 
-### env 
+#### env 
 
 contains all the environment variables, directories, flags that should be adapte for a given environment 
 
@@ -16,22 +22,21 @@ contains all the environment variables, directories, flags that should be adapte
 `conda activate transfer` 
 
 
-## Download pretrained model
+### Download pretrained model
 
 For checkpoint compatibility reasons, we do not use the standart `from_pretrained` method function from Hugging-Face. Therefore, we download manually the checkpoints.
 
 
 In `./transfer/downstream/pretrained` download checkpoints and unzip: 
 
-- for Multilingual BERT: https://drive.google.com/file/d/1QVazXC8p3JttjepLkpYyRxU2Gz-rPjWN/view?usp=sharing      
-- for CamemBERT: https://drive.google.com/file/d/1v69-oDZiIEodKoLMjxOR9Lqf1meIEATr/view?usp=sharing    
+- for Multilingual BERT: https://drive.google.com/file/d/1QVazXC8p3JttjepLkpYyRxU2Gz-rPjWN/view?usp=sharing          
 
 
-## Fine-tuning 
+### Fine-tuning 
 
 
 ```
-ython ./transfer/downstream/finetune/train.py  
+python ./transfer/downstream/finetune/train.py  
 
  python ./transfer/downstream/finetune/train.py  
  --tasks parsing 
