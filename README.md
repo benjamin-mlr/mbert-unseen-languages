@@ -4,6 +4,8 @@ This repository includes pointers and scripts to reproduce experiments presented
 
 ##  Transliteration 
 
+`cat $data_origin_dir | perl ./transfer/transliteration/alTranscribe.pl -f $lang_src -t $lang_trg > $data_target_dir `
+
 ## Fine-tuning mBERT
 
 ### mBERT Unsupervised Fine Tuning
