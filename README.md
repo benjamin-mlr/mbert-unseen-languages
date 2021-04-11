@@ -4,8 +4,21 @@ This repository includes pointers and scripts to reproduce experiments presented
 
 ##  Transliteration 
 
-`cat $data_origin_dir | perl ./transfer/transliteration/alTranscribe.pl -f $lang_src -t $lang_trg > $data_target_dir `
+## Linguistically motivated Transliteration 
+ 
 
+### Uyghur to the Latin script  
+
+Install pearl at https://www.perl.org/get.html and run:
+
+`cat ug-train.txt | perl ./alTranscribe.pl -f ug -t tr  > ug_latin_script-train.txt`
+
+### Sorani to the Latin script
+  
+`cat ckb-train.txt | perl ./alTranscribe.pl -f ckb -t ku > ckb_latin_script-train.txt`
+
+### 
+  
 ## Fine-tuning mBERT
 
 ### mBERT Unsupervised Fine Tuning
