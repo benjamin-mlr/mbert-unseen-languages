@@ -83,6 +83,8 @@ python ./run_language_modeling.py \
 
 Install pearl at https://www.perl.org/get.html and run:
 
+`cd transfer/transliteration/`
+
 
 `cat ug.txt | perl ./alTranscribe.pl -f ug -t tr  > ug_latin_script.txt`
 
