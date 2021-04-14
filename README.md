@@ -14,7 +14,7 @@ Download [OSCAR](https://oscar-corpus.com/) deduplicated datasets.
 
 ### MLM training 
 
-We use the script  [run_language_modeling.py](https://github.com/huggingface/transformers/blob/master/examples/legacy/run_language_modeling.py)
+We use the script [run_language_modeling.py](https://github.com/huggingface/transformers/blob/master/examples/legacy/run_language_modeling.py) from [Hugging-Face](https://huggingface.co/transformers/)
 
  
 ```
@@ -45,7 +45,7 @@ python ./run_language_modeling.py \
 ### mBERT Unsupervised Fine Tuning
 
 
-Similarly [run_language_modeling.py](https://github.com/huggingface/transformers/blob/master/examples/legacy/run_language_modeling.py)
+Similarly [run_language_modeling.py](https://github.com/huggingface/transformers/blob/master/examples/legacy/run_language_modeling.py) from [Hugging-Face](https://huggingface.co/transformers/)
  
 ```
 export TRAIN_FILE=./train.txt
@@ -82,7 +82,6 @@ python ./run_language_modeling.py \
 ### Uyghur to the Latin script  
 
 Install pearl at https://www.perl.org/get.html and run:
-
 
 
 `cat ug.txt | perl ./alTranscribe.pl -f ug -t tr  > ug_latin_script.txt`
