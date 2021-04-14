@@ -1,20 +1,13 @@
 # When Being Unseen from mBERT is just the Beginning: Handling New Languages With Multilingual Language Models 
 
-This repository includes pointers and scripts to reproduce experiments presented in [When Being Unseen from mBERT is just the Beginning: Handling New Languages With Multilingual Language Models](https://arxiv.org/abs/2010.12858) ( accepted to NAACL 2021
-Program
-Blog
-Sponsors
-Calls
-Ethics
-Reviewer
-FAQ
- https://2021.naacl.org/ )
+This repository includes pointers and scripts to reproduce experiments presented in [When Being Unseen from mBERT is just the Beginning: Handling New Languages With Multilingual Language Models](https://arxiv.org/abs/2010.12858)   (accepted to [NAACL-HLT 2021](https://2021.naacl.org/))
 
+  
 ## Fine-tuning mBERT
 
 ### Data
 
-#### Raw data for unsupervised fine-tuning
+#### Raw data for MLM training/unsupervised fine-tuning
 
 Download [OSCAR](https://oscar-corpus.com/) deduplicated datasets. 
 
@@ -85,21 +78,23 @@ python ./run_language_modeling.py \
 
 ## Linguistically motivated Transliteration 
  
+
 ### Uyghur to the Latin script  
 
 Install pearl at https://www.perl.org/get.html and run:
 
-`cat ug_dedup.txt | perl ./alTranscribe.pl -f ug -t tr  > ug_latin_script.txt`
+
+
+`cat ug.txt | perl ./alTranscribe.pl -f ug -t tr  > ug_latin_script.txt`
 
 ### Sorani to the Latin script
   
-`cat ckb_dedup.txt | perl ./alTranscribe.pl -f ckb -t ku > ckb_latin_script.txt`
+`cat ckb.txt | perl ./alTranscribe.pl -f ckb -t ku > ckb_latin_script.txt`
 
 
 # How to cite 
 
 If you extend or use this work, please cite:
-
 
 ```
 @misc{muller2020unseen,
@@ -111,5 +106,3 @@ If you extend or use this work, please cite:
       primaryClass={cs.CL}
 }
 ```
-
-
