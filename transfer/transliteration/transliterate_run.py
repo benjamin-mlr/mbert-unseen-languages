@@ -106,51 +106,16 @@ def transliterate(src, target, script_src, script_trg, perm=None,
         print("WARNING: some lines got broken ",e)
 
 
-
 if __name__ == "__main__":
 
-    #perm = get_permute()
-    #print(perm)
     dir = os.environ.get("OSCAR")
-    dir = os.environ.get("WIKIPEDIA")
 
     lang = "mt_mudt"
-
-    for set in []:
-        file = f"{dir}/{lang}_oscar-{set}.txt"
-        trg = f"{dir}/{lang}_perm_1_oscar-{set}.txt"
-        perm = get_permute()
-
-        transliterate(file, target=trg, script_src="latin", script_trg="permute", perm=perm)#, break_n_sent=1000)
-        perm = get_permute()
-        trg = f"{dir}/{lang}_perm_2_oscar-{set}.txt"
-        transliterate(file, target=trg, script_src="latin", script_trg="permute", perm=perm)#, break_n_sent=1000)
-        trg = f"{dir}/{lang}_ar_script_oscar-{set}.txt"
-        transliterate(file, target=trg, script_src="latin", script_trg="ar")#, break_n_sent=1000)
-
-    ## creating permutation and dumping 
-    #char_set = json.load(open("./char_set_xlmr.json","r"))
-    #perm= get_permute(alphanumerical_char=char_set)
-    #uid=str(uuid4())[:5]
-    #dir_perm=f"./char_set_xlmr_perm_{uid}.json"
-    #json.dump(perm,open(dir_perm,"w",encoding="utf-8"), ensure_ascii=False, indent=4)
-
-    ## loading 
-    uid = "63d0b"
-    #dir_perm=f"./char_set_xlmr_perm_{uid}.json"
-    #perm = json.load(open(dir_perm,"r",encoding="utf-8"))
-    #print(f"{dir_perm} written")
-    #perm=None
-    #target = "permute"
     label = "latin"
 
-    #for lang, script in zip(["ru_gsd", "ar_padt", "el_gdt", "ja_gsd"], ["ru","ar", "el", "ja"]):
-    #for lang, script in zip(["ja_wiki","ru_wiki"], ["ja","ru"]):
     for lang, script in zip(['ja_wiki'], ['ja']):
         for set in ["train", "test", "dev"]:
             corpus = "wikiner"
-            #corpus = "ud"
-            #perm = get_permute ()
             dir = os.environ.get("DATA_UD")+"/../wikiner-new"
             file = f"{dir}/{lang}-{corpus}-{set}.conll"
             if not os.path.isfile(file):
@@ -158,21 +123,9 @@ if __name__ == "__main__":
                 continue
             trg = f"{dir}/{lang}_{label}-{corpus}-{set}.conll"
             print(trg)
-            #transliterate(file, target=trg, script_src="ar", script_trg="latin", type="conll")#, perm=perm)  # , break_n_sent=1000)
             print("trg is", trg)
             transliterate(file, target=trg, script_src=script, script_trg="latin", type="conll")
-            #transliterate(file, target=trg, script_src=script, script_trg="permute", type="conll", perm=perm)
 
         print(f"{lang}_{label} done in {corpus} project transliterated ")
-
-    lang = "bx"
-    
-    for lang in []:
-        suff="wiki"
-        for set in ["train", "test"]:
-            file = f"{dir}/{lang}_{suff}-{set}.txt"
-            trg = f"{dir}/{lang}_latin_{suff}-{set}.txt"
-            #perm = get_permute()
-            transliterate(file, target=trg, script_src="ka", script_trg="latin")#, break_n_sent=50000)
 
 
