@@ -2,7 +2,26 @@
 
 This repository includes pointers and scripts to reproduce experiments presented in [When Being Unseen from mBERT is just the Beginning: Handling New Languages With Multilingual Language Models](https://arxiv.org/abs/2010.12858)   (accepted to [NAACL-HLT 2021](https://2021.naacl.org/))
 
+##  Transliteration 
+
+## Linguistically motivated Transliteration 
+ 
+
+### Uyghur to the Latin script  
+
+Install pearl at https://www.perl.org/get.html and run:
+
+`cd transfer/transliteration/`
+
+
+`cat ug.txt | perl ./alTranscribe.pl -f ug -t tr  > ug_latin_script.txt`
+
+### Sorani to the Latin script
   
+`cat ckb.txt | perl ./alTranscribe.pl -f ckb -t ku > ckb_latin_script.txt`
+
+
+
 ## Fine-tuning mBERT
 
 ### Data
@@ -74,23 +93,6 @@ python ./run_language_modeling.py \
 
 
 
-##  Transliteration 
-
-## Linguistically motivated Transliteration 
- 
-
-### Uyghur to the Latin script  
-
-Install pearl at https://www.perl.org/get.html and run:
-
-`cd transfer/transliteration/`
-
-
-`cat ug.txt | perl ./alTranscribe.pl -f ug -t tr  > ug_latin_script.txt`
-
-### Sorani to the Latin script
-  
-`cat ckb.txt | perl ./alTranscribe.pl -f ckb -t ku > ckb_latin_script.txt`
 
 
 # How to cite 
