@@ -11,4 +11,3 @@ pip install oauth2client
 pip install boto3
 pip install unidecode
 pip install transformers==2.8.0
-pip install allennlp==0.9.0

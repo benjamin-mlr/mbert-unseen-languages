@@ -438,6 +438,7 @@ class BertMultiTask(CLASS_PRETRAINED_MODEL):
             model_kwargs = kwargs
 
         # Load model
+        print('loading from ', pretrained_model_name_or_path)
         if pretrained_model_name_or_path is not None:
             if os.path.isdir(pretrained_model_name_or_path):
                 if from_tf and os.path.isfile(os.path.join(pretrained_model_name_or_path, TF_WEIGHTS_NAME + ".index")):
@@ -628,7 +629,6 @@ class BertMultiTask(CLASS_PRETRAINED_MODEL):
         state_dict_new = OrderedDict()
         for key, _ in state_dict.items():
             state_dict_new[key] = state_dict[key].clone()
-            #pdb.set_trace()
             if add_prefix:
                 print(f"keys_mapping {keys_mapping} will be ignored")
                 state_dict_new["encoder." + key] = state_dict[key].clone()

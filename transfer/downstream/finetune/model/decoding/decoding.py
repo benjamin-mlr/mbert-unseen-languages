@@ -3,8 +3,7 @@ import torch
 import torch.nn.functional as F
 import numpy
 
-
-from allennlp.nn.chu_liu_edmonds import decode_mst
+from transfer.downstream.finetune.model.decoding.chu_liu_edmonds import decode_mst
 
 
 def run_mst_decoding(batch_energy: torch.Tensor, lengths: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
@@ -34,7 +33,6 @@ def run_mst_decoding(batch_energy: torch.Tensor, lengths: torch.Tensor) -> Tuple
 
 
 def decode_mst_tree(pairwise_head_logits, attended_arcs, mask, lengths):
-
 
     normalized_pairwise_head_logits = F.log_softmax(pairwise_head_logits, dim=3).permute(0, 3, 1, 2)
 
